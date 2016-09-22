@@ -1,4 +1,6 @@
 class BarbecuesController < ApplicationController
+   before_action :authenticate_user!, only: [:index]
+
   def index
     @barbecues = Barbecue.order(:date)
   end
